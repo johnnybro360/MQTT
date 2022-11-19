@@ -1,4 +1,4 @@
-client = new Paho.MQTT.Client("wss://mqtt.eclipseprojects.io", "Display");
+client = new Paho.MQTT.Client("mqtt.eclipseprojects.io", Number(443), "Display");
 
 client.onConnectionLost = (responseObject) => console.log("Connection Lost: "+responseObject.errorMessage);
 
