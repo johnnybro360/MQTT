@@ -1,5 +1,5 @@
 // client = new Paho.MQTT.Client("wss://mqtt.eclipseprojects.io", Number(443), "Display");
-client = new Paho.Client(`wss://mqtt.eclipseprojects.io`, "Display");
+client = new Paho.MQTT.Client(`wss://mqtt.eclipseprojects.io`, "Display");
 
 client.onConnectionLost = (responseObject) => console.log("Connection Lost: "+responseObject.errorMessage);
 
@@ -10,7 +10,7 @@ client.connect({
 function onConnect() {
   console.log("onConnect");
   client.subscribe("joondalup/CarPark");
-  message = new Paho.Message('{"Hello": "World!"}');
+  message = new Paho.MQTT.Message('{"Hello": "World!"}');
   message.destinationName = "joondalup/CarPark";
   client.send(message);
 }
