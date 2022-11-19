@@ -10,7 +10,7 @@ client.connect({
 function onConnect() {
   console.log("onConnect");
   client.subscribe("joondalup/CarPark");
-  message = new Paho.MQTT.Message('{"Hello": "World!"}');
+  message = new Paho.MQTT.Message('{"Display": "Connected"}');
   message.destinationName = "joondalup/CarPark";
   client.send(message);
 }
